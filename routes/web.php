@@ -15,10 +15,11 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::resource('posts', 'PostsController');
-Route::get('email', function () {
+/*Route::get('email', function () {
     return view('posts.email');
-});
-Route::get('email', 'MailController@send');
+});*/
+
+Route::get('/posts/{id}/email', 'MailController@send');
 /*
 Route::get('/about', function () {
     return view('pages.about');
@@ -26,5 +27,5 @@ Route::get('/about', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
-Route::get('send', 'MailController@send');
-Route::post('send', 'MailController@send');
+//Route::get('send', 'MailController@send');
+//Route::post('send', 'MailController@send');
